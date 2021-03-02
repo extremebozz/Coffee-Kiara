@@ -18,22 +18,36 @@ namespace Coffee_Kiara.Controllers
         }
 
         [HttpPost]
-        public ActionResult CekUser(Coffee_Kiara.Models.UserData userData)
-        {            
+        public ActionResult CekUser(Coffee_Kiara.Models.UserData UserData)
+        {
+            List<Models.UserData> userData = new List<Models.UserData>();
+
             using (con = new MySqlConnection(ConfigurationManager.ConnectionStrings["database"].ConnectionString))
             {
                 con.Open();
-                var userDetail = new MySqlCommand(string.Format("SELECT * FROM user_data WHERE username = '{0}' AND password = '{1}'",
-                userData.Username, userData.Password), con).ExecuteNonQuery().ToString();
+                MySqlCommand cmd = new MySqlCommand(string.Format("SELECT * FROM user_data WHERE username = '{0}' AND password = '{1}'",
+                UserData.Username, UserData.Password), con);
 
-                if (userDetail == null)
+                using (MySqlDataReader read = cmd.ExecuteReader())
+                    if (read.HasRows)
+                    {
+                        read.Read();
+                        userData.Add(new Models.UserData()
+                        {
+                            UserID = Convert.ToInt32(read["id"]),
+                            Username = read["username"].ToString(),
+                            Password = read["password"].ToString()
+                        });
+                    }
+
+                if (userData.Count == 0)
                 {
-                    userData.ErrorMessage = "Username Atau Password Salah!";
-                    return View("Index", userData);
+                    UserData.ErrorMessage = "Username Atau Password Salah!";
+                    return View("Index", UserData);
                 }
                 else
                 {
-                    Session["userID"] = userDetail[0];
+                    Session["userID"] = userData[0].UserID;
                     return RedirectToAction("Index", "Home");
                 }
             }
