@@ -1,0 +1,54 @@
+﻿
+@{
+    Layout = null;
+}
+@model Coffee_Kiara.Models.UserData
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("CekUser", "Login", FormMethod.Post))
+        {
+            <table>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.Username)</td> <!-- Menampilkan Label Dengan Value Yang Ada Di Model UserData Bagian DisplayName -->
+                    <td>@Html.EditorFor(model => model.Username)</td> <!-- Menampilkan Textbox Untuk Mengisi Data Username Pada Model-->
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>@Html.ValidationMessageFor(model => model.Username)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.Password)</td> <!-- Menampilkan Label Dengan Value Yang Ada Di Model UserData Bagian DisplayName -->
+                    <td>@Html.EditorFor(model => model.Password)</td> <!-- Menampilkan Textbox Untuk Mengisi Data Password Pada Model-->
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>@Html.ValidationMessageFor(model => model.Password)</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label>@Html.DisplayFor(model => model.ErrorMessage)</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" name="name" value="Login" /></td>
+                </tr>
+            </table>
+        }
+    </div>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+</body>
+</html>
