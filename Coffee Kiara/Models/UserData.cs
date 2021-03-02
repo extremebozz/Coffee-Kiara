@@ -11,7 +11,7 @@ namespace Coffee_Kiara.Models
     {
         public int UserID { get; set; }
         [Required(ErrorMessage = "User Name Tidak Boleh Kosong!")]
-        [DisplayName("User Nmae")]
+        [DisplayName("User Name")]
         public string Username { get; set; }        
         [Required(ErrorMessage = "Password Tidak Boleh Kosong!")]
         [DataType(DataType.Password)]
