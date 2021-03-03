@@ -36,7 +36,8 @@ namespace Coffee_Kiara.Controllers
                         {
                             UserID = Convert.ToInt32(read["id"]),
                             Username = read["username"].ToString(),
-                            Password = read["password"].ToString()
+                            Password = read["password"].ToString(),
+                            Role = read["role"].ToString()
                         });
                     }
 
@@ -48,8 +49,16 @@ namespace Coffee_Kiara.Controllers
                 else
                 {
                     Session["userID"] = userData[0].UserID;
-                    return RedirectToAction("Index", "Home");
+                    switch (userData[0].Role)
+                    {
+                        case "admin":
+                            return RedirectToAction("Index", "Admin");
+
+                        case "user":
+                            return RedirectToAction("Index", "Home");
+                    }                    
                 }
+                return View();
             }
         }
     }
