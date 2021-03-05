@@ -14,13 +14,33 @@ namespace Coffee_Kiara.Controllers
         // GET: Login
         public ActionResult Index()
         {
-            return View();
+            try
+            {
+                using (con = new MySqlConnection(ConfigurationManager.ConnectionStrings["database"].ConnectionString))
+                    con.Open();
+
+                if (Session["role"] != null)
+                    switch (Session["role"])
+                    {
+                        case "admin":
+                            return RedirectToAction("Index", "Admin");
+
+                        case "user":
+                            return RedirectToAction("Index", "Home");
+                    }
+
+                return View();
+            }
+            catch
+            {
+                return Content("Pastikan Database Anda Terhubung!");
+            }
         }
 
         [HttpPost]
-        public ActionResult CekUser(Coffee_Kiara.Models.UserData UserData)
+        public ActionResult CekUser(Models.UserData UserData)
         {
-            List<Models.UserData> userData = new List<Models.UserData>();
+            var userDetail = new Models.UserData { };
 
             using (con = new MySqlConnection(ConfigurationManager.ConnectionStrings["database"].ConnectionString))
             {
@@ -32,34 +52,35 @@ namespace Coffee_Kiara.Controllers
                     if (read.HasRows)
                     {
                         read.Read();
-                        userData.Add(new Models.UserData()
-                        {
-                            UserID = Convert.ToInt32(read["id"]),
-                            Username = read["username"].ToString(),
-                            Password = read["password"].ToString(),
-                            Role = read["role"].ToString()
-                        });
+                        userDetail = new Models.UserData { UserID = Convert.ToInt32(read["id"]), Username = read["username"].ToString(), 
+                            Password = read["password"].ToString(), Role = read["role"].ToString()
+                        };
                     }
 
-                if (userData.Count == 0)
-                {
-                    UserData.ErrorMessage = "Username Atau Password Salah!";
-                    return View("Index", UserData);
-                }
-                else
-                {
-                    Session["userID"] = userData[0].UserID;
-                    switch (userData[0].Role)
+                if (userDetail != null)
+                {                    
+                    Session["userID"] = userDetail.UserID;
+                    Session["user"] = userDetail.Username;
+                    Session["role"] = userDetail.Role;
+                    switch (userDetail.Role)
                     {
                         case "admin":
                             return RedirectToAction("Index", "Admin");
 
                         case "user":
                             return RedirectToAction("Index", "Home");
-                    }                    
+                    }
                 }
-                return View();
+
+                UserData.ErrorMessage = "Username Atau Password Salah!";
+                return View("Index", UserData);
             }
+        }
+
+        public ActionResult Logout()
+        {
+            Session.Clear();
+            return RedirectToAction("Index", "Login");
         }
     }
 }

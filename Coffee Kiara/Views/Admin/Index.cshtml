@@ -1,6 +1,6 @@
 ﻿
 @{
-    Layout = null;
+    Layout = "/Views/Shared/_LayoutAdmin.cshtml";
 }
 
 <!DOCTYPE html>
@@ -11,8 +11,533 @@
     <title>Index</title>
 </head>
 <body>
-    <div> 
-        <h1>Dashboard</h1>
-    </div>
+    <div class="content-wrap">
+        <div class="main">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-8 p-0">
+                        <div class="page-header">
+                            <div class="page-title">
+                                <h1>Dashboard</h1>
+                            </div>
+                        </div>
+                    </div><!-- /# column -->
+                    <div class="col-lg-4 p-0">
+                        <div class="page-header">
+                            <div class="page-title">
+                                <ol class="breadcrumb text-right">
+                                    <li><a href="#">Dashboard</a></li>
+                                    <li class="active">Home</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div><!-- /# column -->
+                </div><!-- /# row -->
+                <div class="main-content">
+                    <div class="row">
+                        <div class="col-lg-9">
+                            <div class="card alert">
+                                <div class="card-header">
+                                    <h4>Earning Graph</h4>
+                                    <div class="card-header-right-icon">
+                                        <ul>
+                                            <li class="card-close" data-dismiss="alert"><i class="ti-close"></i></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="sales-chart">
+                                    <canvas id="team-chart" height="136"></canvas>
+                                </div>
+                            </div>
+                        </div><!-- /# column -->
+                        <div class="col-lg-3">
+                            <div class="card alert nestable-cart single-card">
+                                <div class="card-header">
+                                    <h4>Today Visit</h4>
+                                </div>
+                                <div class="sparkline-box">
+                                    <span id="sparklinedash"><canvas width="67" height="30" style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas></span>
+                                </div>
+                                <div class="visit-count">
+                                    8.23K
+                                </div>
+                            </div>
+
+                            <div class="card alert nestable-cart single-card">
+                                <div class="card-header">
+                                    <h4>Unique Visitor</h4>
+                                </div>
+                                <div class="sparkline-box">
+                                    <span id="sparklinedash3"><canvas width="67" height="30" style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas></span>
+                                </div>
+                                <div class="visit-count">
+                                    4.5K
+                                </div>
+                            </div>
+                            <div class="card alert nestable-cart single-card">
+                                <div class="card-header">
+                                    <h4>Total Page View</h4>
+                                </div>
+                                <div class="sparkline-box">
+                                    <span id="sparklinedash2"><canvas width="67" height="30" style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas></span>
+                                </div>
+                                <div class="visit-count">
+                                    92.5K
+                                </div>
+                            </div>
+
+                            <div class="card alert nestable-cart">
+                                <div class="card-header">
+                                    <h4>Site Traffic</h4>
+                                </div>
+                                <div class="sparkline-box">
+                                    <div id="sparkline9"><canvas width="269" height="50" style="display: inline-block; width: 269px; height: 50px; vertical-align: top;"></canvas></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div><!-- /# row -->
+
+
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="card alert">
+                                <div class="card-header">
+                                    <h4>Menu List</h4>
+                                </div>
+                                <div class="card-body">
+                                    <table class="table table-responsive table-hover ">
+                                        <tbody>
+                                            <tr>
+                                                <td class="no-border">Chicken Burger</td>
+                                                <td class="no-border"><span class="btn btn-primary">$21</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Hot Dog</td>
+                                                <td><span class="btn btn-success">$15</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Soft Drinks</td>
+                                                <td><span class="btn btn-danger">$30</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Nudulles</td>
+                                                <td><span class="btn btn-primary">$25</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Thai Soup</td>
+                                                <td><span class="btn btn-success">$29</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Fried Rice</td>
+                                                <td><span class="btn btn-danger">$14</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Vegitables</td>
+                                                <td><span class="btn btn-success">$18</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div><!-- /# column -->
+                        <div class="col-lg-8">
+                            <div class="card alert">
+                                <div class="card-header">
+                                    <h4>Online Order List </h4>
+                                    <div class="card-header-right-icon">
+                                        <ul>
+                                            <li class="card-close" data-dismiss="alert"><i class="ti-close"></i></li>
+                                            <li class="card-option drop-menu">
+                                                <i class="ti-settings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" role="link"></i>
+                                                <ul class="card-option-dropdown dropdown-menu">
+                                                    <li><a href="#"><i class="ti-loop"></i> Update data</a></li>
+                                                    <li><a href="#"><i class="ti-menu-alt"></i> Detail log</a></li>
+                                                    <li><a href="#"><i class="ti-pulse"></i> Statistics</a></li>
+                                                    <li><a href="#"><i class="ti-power-off"></i> Clear ist</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <table class="table table-responsive table-hover ">
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Order ID</th>
+                                                <th>Product</th>
+                                                <th>Quantity</th>
+                                                <th>Price</th>
+                                                <th>Delevery</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Jone Doe</td>
+                                                <td>#12456</td>
+                                                <td>Hot Dog</td>
+                                                <td>3</td>
+                                                <td class="color-success">$21.56</td>
+                                                <td><span class="btn btn-success">Paid</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Jannatul Sofiya</td>
+                                                <td>#12456</td>
+                                                <td>Hot Dog</td>
+                                                <td>3</td>
+                                                <td class="color-warning">$21.56</td>
+                                                <td><span class="btn btn-warning">Pending</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Anik Hasan</td>
+                                                <td>#12456</td>
+                                                <td>Hot Dog</td>
+                                                <td>3</td>
+                                                <td class="color-danger">$21.56</td>
+                                                <td><span class="btn btn-danger">Cancel</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Micheal Qin</td>
+                                                <td>#12456</td>
+                                                <td>Hot Dog</td>
+                                                <td>3</td>
+                                                <td class="color-success">$21.56</td>
+                                                <td><span class="btn btn-success">paid</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>John Doe</td>
+                                                <td>#12456</td>
+                                                <td>Hot Dog</td>
+                                                <td>3</td>
+                                                <td class="color-success">$21.56</td>
+                                                <td><span class="btn btn-success">Paid</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Jannatul Richard</td>
+                                                <td>#12456</td>
+                                                <td>Hot Dog</td>
+                                                <td>3</td>
+                                                <td class="color-warning">$21.56</td>
+                                                <td><span class="btn btn-warning">Pending</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div><!-- /# column -->
+                    </div><!-- /# row -->
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="card alert">
+                                <div class="card-header">
+                                    <h4>Order Progress</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="current-progress">
+                                        <div class="progress-content">
+                                            <div class="row">
+                                                <div class="col-lg-4">
+                                                    <div class="progress-text">Birthday Cake</div>
+                                                </div>
+                                                <div class="col-lg-8">
+                                                    <div class="current-progressbar">
+                                                        <div class="progress">
+                                                            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+                                                                40% progress
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="progress-content">
+                                            <div class="row">
+                                                <div class="col-lg-4">
+                                                    <div class="progress-text">Chicken Burger</div>
+                                                </div>
+                                                <div class="col-lg-8">
+                                                    <div class="current-progressbar">
+                                                        <div class="progress">
+                                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:60%">
+                                                                60% progress
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="progress-content">
+                                            <div class="row">
+                                                <div class="col-lg-4">
+                                                    <div class="progress-text">Kabab Masala</div>
+                                                </div>
+                                                <div class="col-lg-8">
+                                                    <div class="current-progressbar">
+                                                        <div class="progress">
+                                                            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                                                                70% progress
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="progress-content">
+                                            <div class="row">
+                                                <div class="col-lg-4">
+                                                    <div class="progress-text">Soft Drinks</div>
+                                                </div>
+                                                <div class="col-lg-8">
+                                                    <div class="current-progressbar">
+                                                        <div class="progress">
+                                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%">
+                                                                90% progress
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /# column -->
+                        <div class="col-lg-4">
+                            <div class="card bg-primary">
+                                <div class="weather-widget">
+                                    <div id="weather-one" class="weather-one p-17"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card bg-success">
+                                <div class="testimonial-widget-one p-17">
+                                    <div class="owl-carousel owl-theme">
+                                        <div class="item">
+                                            <div class="testimonial-content">
+                                                <div class="testimonial-text">
+                                                    <i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation <i class="fa fa-quote-right"></i>
+                                                </div>
+                                                <img class="testimonial-author-img" src="assets/images/avatar/1.jpg" alt="" />
+                                                <div class="testimonial-author">TYRION LANNISTER</div>
+                                                <div class="testimonial-author-position">Founder-Ceo. Dell Corp</div>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="testimonial-content">
+                                                <div class="testimonial-text">
+                                                    <i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation <i class="fa fa-quote-right"></i>
+                                                </div>
+                                                <img class="testimonial-author-img" src="assets/images/avatar/1.jpg" alt="" />
+                                                <div class="testimonial-author">TYRION LANNISTER</div>
+                                                <div class="testimonial-author-position">Founder-Ceo. Dell Corp</div>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="testimonial-content">
+                                                <div class="testimonial-text">
+                                                    <i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation <i class="fa fa-quote-right"></i>
+                                                </div>
+                                                <img class="testimonial-author-img" src="assets/images/avatar/1.jpg" alt="" />
+                                                <div class="testimonial-author">TYRION LANNISTER</div>
+                                                <div class="testimonial-author-position">Founder-Ceo. Dell Corp</div>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="testimonial-content">
+                                                <div class="testimonial-text">
+                                                    <i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation <i class="fa fa-quote-right"></i>
+                                                </div>
+                                                <img class="testimonial-author-img" src="assets/images/avatar/1.jpg" alt="" />
+                                                <div class="testimonial-author">TYRION LANNISTER</div>
+                                                <div class="testimonial-author-position">Founder-Ceo. Dell Corp</div>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="testimonial-content">
+                                                <div class="testimonial-text">
+                                                    <i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation <i class="fa fa-quote-right"></i>
+                                                </div>
+                                                <img class="testimonial-author-img" src="assets/images/avatar/1.jpg" alt="" />
+                                                <div class="testimonial-author">TYRION LANNISTER</div>
+                                                <div class="testimonial-author-position">Founder-Ceo. Dell Corp</div>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="testimonial-content">
+                                                <div class="testimonial-text">
+                                                    <i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation <i class="fa fa-quote-right"></i>
+                                                </div>
+                                                <img class="testimonial-author-img" src="assets/images/avatar/1.jpg" alt="" />
+                                                <div class="testimonial-author">TYRION LANNISTER</div>
+                                                <div class="testimonial-author-position">Founder-Ceo. Dell Corp</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="card alert">
+                                <div class="card-header">
+                                    <h4>Todo List</h4>
+                                    <div class="card-header-right-icon">
+                                        <ul>
+                                            <li class="card-close" data-dismiss="alert"><i class="ti-close"></i></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="todo-list">
+                                    <div class="tdl-holder">
+                                        <div class="tdl-content">
+                                            <ul>
+                                                <li><label><input type="checkbox"><i></i><span>Decorate Kitchen Room</span><a href='#' class="ti-close"></a></label></li>
+                                                <li><label><input type="checkbox" checked><i></i><span>Delevery Pizza</span><a href='#' class="ti-close"></a></label></li>
+                                                <li><label><input type="checkbox"><i></i><span>New Order </span><a href='#' class="ti-close"></a></label></li>
+                                                <li><label><input type="checkbox" checked><i></i><span>Home Delevery</span><a href='#' class="ti-close"></a></label></li>
+                                                <li><label><input type="checkbox" checked><i></i><span>New Chicken Receipe</span><a href='#' class="ti-close"></a></label></li>
+                                            </ul>
+                                        </div>
+                                        <input type="text" class="tdl-new form-control" placeholder="Write new item and hit 'Enter'...">
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /# column -->
+                        <div class="col-lg-4">
+                            <div class="card alert">
+                                <div class="card-header">
+                                    <h4>Customer Feed </h4>
+                                    <div class="card-header-right-icon">
+                                        <ul>
+                                            <li class="card-close" data-dismiss="alert"><i class="ti-close"></i></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="recent-meaasge">
+                                    <div class="media">
+                                        <div class="media-left">
+                                            <a href="#"><img class="media-object" src="assets/images/avatar/1.jpg" alt="..."></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <h5 class="media-heading">Jone Doe</h5>
+                                            <div class="meaasge-date">15 minutes Ago</div>
+                                            <p>We are happy about your service </p>
+                                        </div>
+                                    </div>
+                                    <div class="media">
+                                        <div class="media-left">
+                                            <a href="#"><img class="media-object" src="assets/images/avatar/2.jpg" alt="..."></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <h5 class="media-heading">Sara Maggi</h5>
+                                            <div class="meaasge-date">40 minutes ago</div>
+                                            <p>Quick service and good serve </p>
+                                        </div>
+                                    </div>
+                                    <div class="media">
+                                        <div class="media-left">
+                                            <a href="#"><img class="media-object" src="assets/images/avatar/3.jpg" alt="..."></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <h5 class="media-heading">Mr. Wolf</h5>
+                                            <div class="meaasge-date">1 hour ago</div>
+                                            <p>Really tasty reciepe </p>
+                                        </div>
+                                    </div>
+                                    <div class="media">
+                                        <div class="media-left">
+                                            <a href="#"><img class="media-object" src="assets/images/avatar/3.jpg" alt="..."></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <h5 class="media-heading">Mr. Wolf</h5>
+                                            <div class="meaasge-date">1 minutes ago</div>
+                                            <p>We like your birthday cake </p>
+                                        </div>
+                                    </div>
+                                    <div class="media no-border">
+                                        <div class="media-left">
+                                            <a href="#"><img class="media-object" src="assets/images/avatar/2.jpg" alt="..."></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <h5 class="media-heading">Sara Maggi</h5>
+                                            <div class="meaasge-date">40 minutes ago</div>
+                                            <p>Quick service and good serve </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- /# card -->
+                        </div><!-- /# column -->
+                        <div class="col-lg-4">
+                            <div class="card alert">
+                                <div class="card-header">
+                                    <h4>Timeline</h4>
+                                    <div class="card-header-right-icon">
+                                        <ul>
+                                            <li class="card-close" data-dismiss="alert"><i class="ti-close"></i></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="timeline">
+                                        <li>
+                                            <div class="timeline-badge primary"><i class="fa fa-smile-o"></i></div>
+                                            <div class="timeline-panel">
+                                                <div class="timeline-heading">
+                                                    <h5 class="timeline-title">You deleted homepage.psd</h5>
+                                                </div>
+                                                <div class="timeline-body">
+                                                    <p>10 minutes ago</p>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="timeline-badge warning"><i class="fa fa-sun-o"></i></div>
+                                            <div class="timeline-panel">
+                                                <div class="timeline-heading">
+                                                    <h5 class="timeline-title">You change your profile picture</h5>
+                                                </div>
+                                                <div class="timeline-body">
+                                                    <p>20 minutes ago</p>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="timeline-badge danger"><i class="fa fa-times-circle-o"></i></div>
+                                            <div class="timeline-panel">
+                                                <div class="timeline-heading">
+                                                    <h5 class="timeline-title">You followed john doe</h5>
+                                                </div>
+                                                <div class="timeline-body">
+                                                    <p>30 minutes ago</p>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="timeline-badge success"><i class="fa fa-check-circle-o"></i></div>
+                                            <div class="timeline-panel">
+                                                <div class="timeline-heading">
+                                                    <h5 class="timeline-title">Some new content has been added. </h5>
+                                                </div>
+                                                <div class="timeline-body">
+                                                    <p>15 minutes ago</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- /# card -->
+                        </div>
+                    </div><!-- /# row -->
+                </div><!-- /# main content -->
+            </div><!-- /# container-fluid -->
+        </div><!-- /# main -->
+    </div><!-- /# content wrap -->
 </body>
 </html>

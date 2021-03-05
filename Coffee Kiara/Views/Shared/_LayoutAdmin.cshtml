@@ -1,0 +1,294 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/Admin/CSS/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Admin/CSS/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/Admin/CSS/mmc-chat.css" rel="stylesheet" />
+    <link href="~/Content/Admin/CSS/owl.carousel.min.css" rel="stylesheet" />
+    <link href="~/Content/Admin/CSS/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="~/Content/Admin/CSS/sidebar.css" rel="stylesheet" />
+    <link href="~/Content/Admin/CSS/simdahs.css" rel="stylesheet" />
+    <link href="~/Content/Admin/CSS/style.css" rel="stylesheet" />
+    <link href="~/Content/Admin/CSS/themify-icons.css" rel="stylesheet" />
+    <link href="~/Content/Admin/CSS/weather-icons.css" rel="stylesheet" />
+    @*@Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")*@
+</head>
+<body>
+    <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
+        <div class="nano">
+            <div class="nano-content">
+                <ul>
+                    <li class="label">Main</li>
+                    <li class="active"><a href="@Url.Action("Index", "Admin")"><i class="ti-home"></i> Dashboard </a></li>
+
+
+                    <li><a href="@Url.Action("Profile", "Admin")"><i class="ti-user"></i> Profile</a></li>
+
+
+
+                    <li class="label">Features</li>
+                    <li>
+                        <a class="sidebar-sub-toggle"><i class="ti-layout"></i> UI Elements <span class="sidebar-collapse-icon ti-angle-down"></span></a>
+                        <ul>
+                            <li><a href="~/Views/Admin/ui-accordion.html">Accordion</a></li>
+                            <li><a href="~/Views/Admin/ui-alerts.html">Alerts</a></li>
+                            <li><a href="~/Views/Admin/ui-badges.html">Badges</a></li>
+                            <li><a href="~/Views/Admin/ui-button.html">Button</a></li>
+                            <li><a href="~/Views/Admin/ui-dropdown.html">Dropdown</a></li>
+                            <li><a href="~/Views/Admin/ui-images.html">Images</a></li>
+                            <li><a href="~/Views/Admin/ui-list-group.html">List Group</a></li>
+                            <li><a href="~/Views/Admin/ui-panels.html">Panels</a></li>
+                            <li><a href="~/Views/Admin/ui-progressbar.html">Progressbar</a></li>
+                            <li><a href="~/Views/Admin/ui-tab.html">Tab</a></li>
+                            <li><a href="~/Views/Admin/ui-wells.html">Wells</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="sidebar-sub-toggle"><i class="ti-panel"></i> Components <span class="sidebar-collapse-icon ti-angle-down"></span></a>
+                        <ul>
+                            <li><a href="~/Views/Admin/uc-calendar.html">Calendar</a></li>
+                            <li><a href="~/Views/Admin/uc-carousel.html">Carousel</a></li>
+                            <li><a href="~/Views/Admin/uc-weather.html">Weather</a></li>
+                            <li><a href="~/Views/Admin/uc-datamap.html">Datamap</a></li>
+                            <li><a href="~/Views/Admin/uc-todo-list.html">To do</a></li>
+                            <li><a href="~/Views/Admin/uc-scrollable.html">Scrollable</a></li>
+                            <li><a href="~/Views/Admin/uc-sweetalert.html">Sweet Alert</a></li>
+                            <li><a href="~/Views/Admin/uc-toastr.html">Toastr</a></li>
+                            <li><a href="~/Views/Admin/uc-range-slider-basic.html">Basic Range Slider</a></li>
+                            <li><a href="~/Views/Admin/uc-range-slider-advance.html">Advance Range Slider</a></li>
+                            <li><a href="~/Views/Admin/uc-nestable.html">Nestable</a></li>
+                            <li><a href="~/Views/Admin/uc-portlets.html">Portlets</a></li>
+
+                        </ul>
+                    </li>
+
+
+                    <li>
+                        <a class="sidebar-sub-toggle"><i class="ti-layout-grid4-alt"></i> Table <span class="sidebar-collapse-icon ti-angle-down"></span></a>
+                        <ul>
+                            <li><a href="~/Views/Admin/table-basic.html">Basic</a></li>
+
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a class="sidebar-sub-toggle"><i class="ti-heart"></i> Icons <span class="sidebar-collapse-icon ti-angle-down"></span></a>
+                        <ul>
+                            <li><a href="~/Views/Admin/font-themify.html">Themify</a></li>
+                        </ul>
+                    </li>
+
+
+
+
+                    <li class="label">Form</li>
+                    <li><a href="~/Views/Admin/form-basic.html"><i class="ti-view-list-alt"></i> Basic Form </a></li>
+
+
+
+                    <li>
+                        <a class="sidebar-sub-toggle"><i class="ti-target"></i> Pages <span class="sidebar-collapse-icon ti-angle-down"></span></a>
+                        <ul>
+                            <li><a href="~/Views/Admin/page-login.html">Login</a></li>
+                            <li><a href="~/Views/Admin/page-register.html">Register</a></li>
+                            <li><a href="~/Views/Admin/page-reset-password.html">Forgot password</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="../documentation/index.html"><i class="ti-file"></i> Documentation</a></li>
+                    <li><a href="@Url.Action("Logout", "Login")"><i class="ti-close"></i> Logout</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div><!-- /# sidebar -->
+
+
+
+
+    <div class="header">
+        <div class="pull-left">
+            <div class="logo" id="sideLogo">
+                <a href="index.html">
+
+                </a>
+            </div>
+            <div class="hamburger sidebar-toggle">
+                <span class="ti-menu"></span>
+            </div>
+        </div>
+
+        <div class="pull-right p-r-15">
+            <ul>
+                <li class="header-icon dib">
+                    <i class="ti-bell"></i>
+                    <div class="drop-down">
+                        <div class="dropdown-content-heading">
+                            <span class="text-left">Recent Notifications</span>
+                        </div>
+                        <div class="dropdown-content-body">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <img class="pull-left m-r-10 avatar-img" src="~/Content/Admin/images/3.jpg" alt="" />
+                                        <div class="notification-content">
+                                            <small class="notification-timestamp pull-right">02:34 PM</small>
+                                            <div class="notification-heading">Mr. Wolf</div>
+                                            <div class="notification-text">5 members joined today </div>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#">
+                                        <img class="pull-left m-r-10 avatar-img" src="~/Content/Admin/images/3.jpg" " alt="" />
+                                        <div class="notification-content">
+                                            <small class="notification-timestamp pull-right">02:34 PM</small>
+                                            <div class="notification-heading">Sofiya</div>
+                                            <div class="notification-text">likes a photo of you</div>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#">
+                                        <img class="pull-left m-r-10 avatar-img" src="~/Content/Admin/images/3.jpg" " alt="" />
+                                        <div class="notification-content">
+                                            <small class="notification-timestamp pull-right">02:34 PM</small>
+                                            <div class="notification-heading">Richard</div>
+                                            <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#">
+                                        <img class="pull-left m-r-10 avatar-img" src="~/Content/Admin/images/3.jpg" " alt="" />
+                                        <div class="notification-content">
+                                            <small class="notification-timestamp pull-right">02:34 PM</small>
+                                            <div class="notification-heading">Sara Maggi</div>
+                                            <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="text-center">
+                                    <a href="#" class="more-link">See All</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="header-icon dib">
+                    <i class="ti-email"></i>
+                    <div class="drop-down">
+                        <div class="dropdown-content-heading">
+                            <span class="text-left">2 New Messages</span>
+                            <a href="email.html"><i class="ti-pencil-alt pull-right"></i></a>
+                        </div>
+                        <div class="dropdown-content-body">
+                            <ul>
+                                <li class="notification-unread">
+                                    <a href="#">
+                                        <img class="pull-left m-r-10 avatar-img" src="~/Content/Admin/Img/1.jpg" alt="" />
+                                        <div class="notification-content">
+                                            <small class="notification-timestamp pull-right">02:34 PM</small>
+                                            <div class="notification-heading">John Doe</div>
+                                            <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class="notification-unread">
+                                    <a href="#">
+                                        <img class="pull-left m-r-10 avatar-img" src="~/Content/Admin/Img/1.jpg" alt="" />
+                                        <div class="notification-content">
+                                            <small class="notification-timestamp pull-right">02:34 PM</small>
+                                            <div class="notification-heading">Sara Maggi</div>
+                                            <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#">
+                                        <img class="pull-left m-r-10 avatar-img" src="~/Content/Admin/Img/1.jpg" alt="" />
+                                        <div class="notification-content">
+                                            <small class="notification-timestamp pull-right">02:34 PM</small>
+                                            <div class="notification-heading">John Doe</div>
+                                            <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#">
+                                        <img class="pull-left m-r-10 avatar-img" src="~/Content/Admin/Img/2.jpg" alt="" />
+                                        <div class="notification-content">
+                                            <small class="notification-timestamp pull-right">02:34 PM</small>
+                                            <div class="notification-heading">Sara Maggi</div>
+                                            <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="text-center">
+                                    <a href="#" class="more-link">See All</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="header-icon dib chat-sidebar-icon"><i class="ti-comment"></i></li>
+                <li class="header-icon dib">
+                    <img class="avatar-img" src="~/Content/Admin/images/1.jpg" alt="" /> <span class="user-avatar">David <i class="ti-angle-down f-s-10"></i></span>
+                    <div class="drop-down dropdown-profile">
+                        <div class="dropdown-content-heading">
+                            <span class="text-left">Upgrade Now</span>
+                            <p class="trial-day">30 Days Trail</p>
+                        </div>
+                        <div class="dropdown-content-body">
+                            <ul>
+                                <li><a href="#"><i class="ti-user"></i> <span>Profile</span></a></li>
+                                <li><a href="#"><i class="ti-wallet"></i> <span>My Balance</span></a></li>
+                                <li><a href="#"><i class="ti-write"></i> <span>My Task</span></a></li>
+                                <li><a href="#"><i class="ti-calendar"></i> <span>My Calender</span></a></li>
+                                <li><a href="#"><i class="ti-email"></i> <span>Inbox</span></a></li>
+                                <li><a href="#"><i class="ti-settings"></i> <span>Setting</span></a></li>
+                                <li><a href="#"><i class="ti-help-alt"></i> <span>Help</span></a></li>
+                                <li><a href="#"><i class="ti-lock"></i> <span>Lock Screen</span></a></li>
+                                <li><a href="@Url.Action("Logout", "Login")"><i class="ti-power-off"></i> <span>Logout</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    @RenderBody()
+    @*@Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")*@
+    @RenderSection("scripts", required: false)
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Content/Admin/Js/jquery.min.js"></script>
+    <script src="~/Content/Admin/Js/jquery.nanoscroller.min.js"></script>
+    <script src="~/Content/Admin/Js/mmc-chat.js"></script>
+    <script src="~/Content/Admin/Js/mmc-common.js"></script>
+    <script src="~/Content/Admin/Js/scripts.js"></script>
+    <script src="~/Content/Admin/Js/sidebar.js"></script>
+    <script src="~/Content/Admin/Js/weather/weather-init.js"></script>
+    <script src="~/Content/Admin/Js/chart-js/Chart.bundle.js"></script>
+    <script src="~/Content/Admin/Js/chart-js/chartjs-init.js"></script>
+    <script src="~/Content/Admin/Js/datamap/d3.min.js"></script>
+    <script src="~/Content/Admin/Js/datamap/datamap-init.js"></script>
+    <script src="~/Content/Admin/Js/datamap/datamaps.world.min.js"></script>
+    <script src="~/Content/Admin/Js/datamap/topojson.js"></script>
+    <script src="~/Content/Admin/Js/owl-carousel/owl.carousel-init.js"></script>
+    <script src="~/Content/Admin/Js/owl-carousel/owl.carousel.min.js"></script>
+    <script src="~/Content/Admin/Js/sparklinechart/jquery.sparkline.min.js"></script>
+    <script src="~/Content/Admin/Js/sparklinechart/sparkline.init.js"></script>
+    <script src="~/Content/Admin/Js/weather/jquery.simpleWeather.min.js"></script>
+</body>
+</html>
