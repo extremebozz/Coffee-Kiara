@@ -14,12 +14,12 @@ namespace Coffee_Kiara.Controllers
         // GET: Login
         public ActionResult Index()
         {
-            try
+           // try
             {
                 using (con = new MySqlConnection(ConfigurationManager.ConnectionStrings["database"].ConnectionString))
                     con.Open();
 
-                if (Session["role"] != null)
+               // if (Session["role"] != null)
                     switch (Session["role"])
                     {
                         case "admin":
@@ -31,7 +31,7 @@ namespace Coffee_Kiara.Controllers
 
                 return View();
             }
-            catch
+           // catch
             {
                 return Content("Pastikan Database Anda Terhubung!");
             }

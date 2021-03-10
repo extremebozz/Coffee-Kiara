@@ -11,11 +11,11 @@ namespace Coffee_Kiara.Controllers
         // GET: Admin
         public ActionResult Index()
         {
-            if (Session["userID"] != null)
+          //  if (Session["userID"] != null)
             {
                 return View();
             }
-            else
+          //  else
             {
                 return RedirectToAction("Index", "Login");
             }
