@@ -100,7 +100,12 @@
                 </li>
  
                 <li class="header-icon dib">
-                    <img class="avatar-img" src="~/Content/Admin/images/1.jpg" alt="" /> <span class="user-avatar">David <i class="ti-angle-down f-s-10"></i></span>
+                    <img class="avatar-img" src="~/Content/Admin/images/1.jpg" alt="" /> <span class="user-avatar">
+                        @if (Session["user"] == null)
+                        {<text>Debug</text>}
+                        else
+                        { <text>@Session["user"].ToString()</text>} <i class="ti-angle-down f-s-10"></i>
+                        </span>
                     <div class="drop-down dropdown-profile">
                         <div class="dropdown-content-heading">
                             <span class="text-left">Upgrade Now</span>
